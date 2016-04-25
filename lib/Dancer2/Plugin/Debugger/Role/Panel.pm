@@ -9,14 +9,4 @@ has plugin => (
     required => 1,
 );
 
-sub get {
-    my ( $self, $key ) = @_;
-    $self->plugin->cache->get_and_remove($key);
-}
-
-sub set {
-    my ( $self, $key, $value ) = @_;
-    $self->plugin->cache->set( $key, $value );
-}
-
 1;

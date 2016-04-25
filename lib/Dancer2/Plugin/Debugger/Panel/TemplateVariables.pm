@@ -10,6 +10,8 @@ use Moo;
 with 'Dancer2::Plugin::Debugger::Role::Panel';
 use namespace::clean;
 
+my $env_key = 'dancer2.debugger.template_variables';
+
 sub BUILD {
     my $self = shift;
 
@@ -18,13 +20,7 @@ sub BUILD {
             name => 'before_layout_render',
             code => sub {
                 my $tokens = shift;
-                my $result = $self->plugin->set_encoded(
-                    template_variables => $tokens
-                );
-                if ( !$result ) {
-                    $self->plugin->app->log( 'warning',
-                        "fastmmap set failed - value too large?" );
-                }
+                $self->plugin->app->request->env->{$env_key} = $tokens;
             },
         )
     );

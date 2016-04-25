@@ -10,6 +10,7 @@ use strict;
 use warnings;
 
 use Carp;
+use Module::Find qw/findsubmod/;
 use Module::Runtime qw/use_module/;
 use Dancer2::Plugin;
 with 'Dancer2::Debugger::Role::Core';
@@ -19,19 +20,10 @@ sub BUILD {
 
     return unless $plugin->config->{enabled};
 
-    my $panels = $plugin->config->{panels};
+    my @panels = findsubmod Dancer2::Plugin::Debugger::Panel;
 
-    croak "Dancer2::Plugin::Debugger enabled but no panels configured"
-      unless $panels;
-
-    croak "Dancer2::Plugin::Debugger panels config is not an array reference"
-      unless ref($panels) eq 'ARRAY';
-
-    foreach my $panel (@$panels) {
-        if ( $panel =~ s/^Dancer2::// ) {
-            $panel = __PACKAGE__ . "::Panel::$panel";
-            use_module($panel)->new( plugin => $plugin );
-        }
+    foreach my $panel (@panels) {
+        use_module($panel)->new( plugin => $plugin );
     }
 }
 

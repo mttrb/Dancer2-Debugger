@@ -94,7 +94,7 @@ Get value for C<$key> from L</cache>.
 
 sub get {
     my ( $self, $key ) = @_;
-    $self->cache->get_and_remove($key);
+    $self->cache->get($key);
 }
 
 =head2 get_decoded $key

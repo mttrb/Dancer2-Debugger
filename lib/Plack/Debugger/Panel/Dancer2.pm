@@ -9,7 +9,6 @@ Plack::Debugger::Panel::Dancer2 - base class for Dancer2 panels
 use strict;
 use warnings;
 
-use Data::Dump qw(dump);
 use Cache::FastMmap;
 use Sereal::Decoder;
 
@@ -27,7 +26,8 @@ sub new {
 
     my $self = $class->SUPER::new( \%args );
 
-    unlink $args{cache_file};
+    # should be somewhere else...
+    #unlink $args{cache_file};
 
     $self->{dancer2_cache} ||= Cache::FastMmap->new(
         share_file => $args{cache_file},

@@ -4,14 +4,11 @@ use strict;
 use warnings;
 
 use Data::Dump qw(dump);
-use Cache::FastMmap;
-use Sereal::Decoder;
 
 use parent 'Plack::Debugger::Panel::Dancer2';
 
 sub new {
     my $class = shift;
-
     my %args = @_ == 1 && ref $_[0] eq 'HASH' ? %{ $_[0] } : @_;
 
     $args{title} ||= 'Dancer2::TemplateVariables';
@@ -20,8 +17,12 @@ sub new {
     $args{'after'} = sub {
         my ( $self, $env, $resp ) = @_;
 
-        my $tokens  = $self->dancer2_cache_get('template_variables') || {};
+        my $env_key = 'dancer2.debugger.template_variables';
+
+        my $tokens = delete $env->{$env_key};
         return unless $tokens;
+
+        delete $tokens->{request}->{env}->{$env_key};
 
         my $html =
           '<table><thead><tr><th>Key</th><th>Value</th></tr></thead><tbody>';
@@ -47,7 +48,7 @@ sub vardump {
     my $scalar = shift;
     return '(undef)' unless defined $scalar;
     return "$scalar" unless ref $scalar;
-    '<pre>' . Data::Dump::dump($scalar) . '</pre>';
+    return '<pre>' . Data::Dump::dump($scalar) . '</pre>';
 }
 
 1;
