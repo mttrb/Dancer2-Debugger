@@ -5,7 +5,7 @@ use warnings;
 
 use Data::Dump qw(dump);
 
-use parent 'Plack::Debugger::Panel::Dancer2';
+use parent 'Plack::Debugger::Panel';
 
 sub new {
     my $class = shift;

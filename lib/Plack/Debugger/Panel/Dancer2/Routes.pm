@@ -3,7 +3,7 @@ package Plack::Debugger::Panel::Dancer2::Routes;
 use strict;
 use warnings;
 
-use parent 'Plack::Debugger::Panel::Dancer2';
+use parent 'Plack::Debugger::Panel';
 
 sub new {
     my $class = shift;
