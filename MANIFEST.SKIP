@@ -1,4 +1,5 @@
 README.md
 \.git.*
+\.old$
 \.swp$
 \.tar\.gz$

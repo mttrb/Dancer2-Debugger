@@ -33,6 +33,7 @@ WriteMakefile(
         'Plack::Debugger::Panel' => 0,
         'Sereal::Decoder'        => 0,
         'Sereal::Encoder'        => 0,
+        'Time::HiRes'            => 0,
     },
     dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean => { FILES    => 'Dancer2-Debugger-*' },
