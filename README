@@ -71,7 +71,7 @@ ATTRIBUTES
   deserializer
     See "deserializer" in Plack::Debugger::Storage.
 
-    Defaults to "serializer".
+    Defaults to the value of "serializer".
 
   filename_fmt
     See "filename_fmt" in Plack::Debugger::Storage.

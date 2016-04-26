@@ -80,7 +80,7 @@ Instantiated [Plack::Debugger](https://metacpan.org/pod/Plack::Debugger) object.
 
 See ["deserializer" in Plack::Debugger::Storage](https://metacpan.org/pod/Plack::Debugger::Storage#deserializer).
 
-Defaults to ["serializer"](#serializer).
+Defaults to the value of ["serializer"](#serializer).
 
 ## filename\_fmt
 

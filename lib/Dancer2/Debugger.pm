@@ -145,7 +145,7 @@ has debugger => (
 
 See L<Plack::Debugger::Storage/deserializer>.
 
-Defaults to L</serializer>.
+Defaults to the value of L</serializer>.
 
 =cut
 
