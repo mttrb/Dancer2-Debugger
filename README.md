@@ -1,6 +1,6 @@
 # NAME
 
-Dancer2::Debugger
+Dancer2::Debugger - Dancer2 panels for Plack::Debugger
 
 # VERSION
 
@@ -50,6 +50,7 @@ convenient and in addition provides a number of Dancer2 panels.
 
 Current panels included with this distribution:
 
+- [Plack::Debugger::Panel::Dancer2::Logger](https://metacpan.org/pod/Plack::Debugger::Panel::Dancer2::Logger)
 - [Plack::Debugger::Panel::Dancer2::Routes](https://metacpan.org/pod/Plack::Debugger::Panel::Dancer2::Routes)
 - [Plack::Debugger::Panel::Dancer2::TemplateVariables](https://metacpan.org/pod/Plack::Debugger::Panel::Dancer2::TemplateVariables)
 
