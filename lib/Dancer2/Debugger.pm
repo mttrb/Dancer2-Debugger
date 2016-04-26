@@ -80,6 +80,8 @@ Current panels included with this distribution:
 
 =item L<Plack::Debugger::Panel::Dancer2::Routes>
 
+=item L<Plack::Debugger::Panel::Dancer2::Session>
+
 =item L<Plack::Debugger::Panel::Dancer2::TemplateVariables>
 
 =back
@@ -271,6 +273,10 @@ sub mount {
 
 1;
 __END__
+
+=head1 SEE ALSO
+
+L<Plack::Debugger>, L<Plack::Debugger::Panel::Dancer2::Version>
 
 =head1 AUTHORS
 
