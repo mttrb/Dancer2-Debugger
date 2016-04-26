@@ -1,55 +1,105 @@
-Plack-Debugger-Dancer2
+NAME
+    Dancer2::Debugger
 
-The README is used to introduce the module and provide instructions on
-how to install the module, any machine dependencies it may have (for
-example C compilers and installed libraries) and any other information
-that should be provided before the module is installed.
+VERSION
+    0.001
 
-A README file is required for CPAN modules since CPAN extracts the README
-file from a module distribution so that people browsing the archive
-can use it to get an idea of the module's uses. It is usually a good idea
-to provide version information here so that people can decide whether
-fixes for the module are worth downloading.
+SYNOPSIS
+    In your .psgi file:
 
+        #!/usr/bin/env perl
 
-INSTALLATION
+        use strict;
+        use warnings;
+        use FindBin;
+        use lib "$FindBin::Bin/../lib";
 
-To install this module, run the following commands:
+        use Plack::Builder;
 
-	perl Makefile.PL
-	make
-	make test
-	make install
+        use Dancer2::Debugger;
+        my $debugger = Dancer2::Debugger->new;
 
-SUPPORT AND DOCUMENTATION
+        use MyApp;
+        my $app = MyApp->to_app;
 
-After installing, you can find documentation for this module with the
-perldoc command.
+        builder {
+            $debugger->mount;
+            mount '/' => builder {
+                $debugger->enable;
+                $app;
+            }
+        };
 
-    perldoc Plack::Debugger::Dancer2
+    In environments/development.yml file:
 
-You can also look for information at:
+        plugins:
+            Debugger:
+                enabled: 1
 
-    RT, CPAN's request tracker (report bugs here)
-        http://rt.cpan.org/NoAuth/Bugs.html?Dist=Plack-Debugger-Dancer2
+ATTRIBUTES
+  app
+    Instantiated Plack::App::Debugger object.
 
-    AnnoCPAN, Annotated CPAN documentation
-        http://annocpan.org/dist/Plack-Debugger-Dancer2
+  data_dir
+    See "data_dir" in Plack::Debugger::Storage.
 
-    CPAN Ratings
-        http://cpanratings.perl.org/d/Plack-Debugger-Dancer2
+    Defaults to "debugger_panel" in the system temp directory (usually
+    "/tmp" on Linux/UNIX systems).
 
-    Search CPAN
-        http://search.cpan.org/dist/Plack-Debugger-Dancer2/
+    Attempts to create the directory if it does not exist.
 
+  debugger
+    Instantiated Plack::Debugger object.
+
+  deserializer
+    See "deserializer" in Plack::Debugger::Storage.
+
+    Defaults to "serializer".
+
+  filename_fmt
+    See "filename_fmt" in Plack::Debugger::Storage.
+
+    Defaults to "%s.json".
+
+  panels
+    Array reference of panel class names to load. Defaults to all classes
+    found in @INC under Plack::Debugger::Panel.
+
+  panel_objects
+    Imported and instantiated panel objects.
+
+  serializer
+    See "serializer" in Plack::Debugger::Storage.
+
+    Defaults to "JSON::MaybeXS->new( convert_blessed => 1, utf8 => 1 )"
+
+  storage
+    Instantiated Plack::Debugger::Storage object.
+
+METHODS
+  enable
+    Convenience method for use in psgi file which runs the following
+    methods:
+
+    "make_injector_middleware" in Plack::App::Debugger and
+    "create_middleware" in Plack::Debugger.
+
+    sub enable { my $self = shift; Plack::Builder::enable
+    $self->app->make_injector_middleware; Plack::Builder::enable
+    $self->debugger->make_collector_middleware; }
+
+  mount
+    Convenience method for use in psgi file to mount Plack::App::Debugger.
+
+AUTHORS
+    Peter Mottram (SysPete), "peter@sysnix.com"
 
 LICENSE AND COPYRIGHT
+    Copyright 2016 Peter Mottram (SysPete).
 
-Copyright (C) 2016 Peter Mottram (SysPete)
+    This program is free software; you can redistribute it and/or modify it
+    under the terms of either: the GNU General Public License as published
+    by the Free Software Foundation; or the Artistic License.
 
-This program is free software; you can redistribute it and/or modify it
-under the terms of either: the GNU General Public License as published
-by the Free Software Foundation; or the Artistic License.
-
-See L<http://dev.perl.org/licenses/> for more information.
+    See http://dev.perl.org/licenses/ for more information.
 
