@@ -18,10 +18,10 @@ sub new {
 
         my $env_key = 'dancer2.debugger.settings';
 
-        my $session = delete $env->{$env_key};
-        return unless $session;
+        my $settings = delete $env->{$env_key};
+        return unless $settings;
 
-        $self->set_result( $session );
+        $self->set_result( $settings );
     };
 
     $class->SUPER::new( \%args );
