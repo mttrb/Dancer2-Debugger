@@ -35,6 +35,13 @@ WriteMakefile(
         'Sereal::Encoder'        => 0,
         'Time::HiRes'            => 0,
     },
-    dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
-    clean => { FILES    => 'Dancer2-Debugger-*' },
+    dist       => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
+    clean      => { FILES    => 'Dancer2-Debugger-*' },
+    META_MERGE => {
+        resources => {
+            repository => 'https://github.com/SysPete/Dancer2-Debugger.git',
+            bugtracker => 'https://github.com/SysPete/Dancer2-Debugger/issues',
+            IRC        => 'irc://irc.perl.org/#dancer',
+        },
+    },
 );
