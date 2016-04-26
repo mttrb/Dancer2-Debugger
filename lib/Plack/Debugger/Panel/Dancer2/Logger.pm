@@ -21,6 +21,35 @@ sub new {
         my $logs = delete $env->{$env_key};
         return unless $logs;
 
+        my %levels = (
+            error   => 0,
+            warning => 0,
+            success => 0,
+        );
+
+        foreach my $log ( @$logs ) {
+            my $level = $log->[0];
+            if ( $level eq 'error' ) {
+                $levels{error}++;
+            }
+            elsif ( $level =~ /^warn/ ) {
+                $levels{warning}++;
+            }
+            else {
+                $levels{success}++;
+            }
+        }
+
+        if ( $levels{error} ) {
+            $self->notify('error', $levels{error});
+        }
+        elsif ( $levels{warning} ) {
+            $self->notify('warning', $levels{warning});
+        }
+        elsif ( $levels{success} ) {
+            $self->notify('success', $levels{success});
+        }
+
         $self->set_result( $logs );
     };
 
