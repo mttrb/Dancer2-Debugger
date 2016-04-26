@@ -39,6 +39,24 @@ In environments/development.yml file:
         Debugger:
             enabled: 1
 
+In MyApp.pm:
+
+    use Dancer2::Plugin::Debugger
+
+# DESCRIPTION
+
+[Dancer2::Debugger](https://metacpan.org/pod/Dancer2::Debugger) makes using the excellent [Plack::Debugger](https://metacpan.org/pod/Plack::Debugger) much more
+convenient and in addition provides a number of Dancer2 panels.
+
+Current panels included with this distribution:
+
+- [Plack::Debugger::Panel::Dancer2::Routes](https://metacpan.org/pod/Plack::Debugger::Panel::Dancer2::Routes)
+- [Plack::Debugger::Panel::Dancer2::TemplateVariables](https://metacpan.org/pod/Plack::Debugger::Panel::Dancer2::TemplateVariables)
+
+Some of the debugger panels make use of collectors which are imported into
+your [Dancer2](https://metacpan.org/pod/Dancer2) app using [Dancer2::Plugin::Debugger](https://metacpan.org/pod/Dancer2::Plugin::Debugger) which is also 
+included in this distribution.
+
 # ATTRIBUTES
 
 ## app

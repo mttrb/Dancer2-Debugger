@@ -63,6 +63,29 @@ In environments/development.yml file:
         Debugger:
             enabled: 1
 
+In MyApp.pm:
+
+    use Dancer2::Plugin::Debugger
+
+=head1 DESCRIPTION
+
+L<Dancer2::Debugger> makes using the excellent L<Plack::Debugger> much more
+convenient and in addition provides a number of Dancer2 panels.
+
+Current panels included with this distribution:
+
+=over
+
+=item L<Plack::Debugger::Panel::Dancer2::Routes>
+
+=item L<Plack::Debugger::Panel::Dancer2::TemplateVariables>
+
+=back
+
+Some of the debugger panels make use of collectors which are imported into
+your L<Dancer2> app using L<Dancer2::Plugin::Debugger> which is also 
+included in this distribution.
+
 =head1 ATTRIBUTES
 
 =head2 app
