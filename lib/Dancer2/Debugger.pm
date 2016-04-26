@@ -6,7 +6,7 @@ use warnings;
 
 =head1 NAME
 
-Dancer2::Debugger
+Dancer2::Debugger - Dancer2 panels for Plack::Debugger
 
 =head1 VERSION
 
