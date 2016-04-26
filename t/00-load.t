@@ -7,7 +7,7 @@ use Test::More;
 plan tests => 1;
 
 BEGIN {
-    use_ok( 'Plack::Debugger::Dancer2' ) || print "Bail out!\n";
+    use_ok( 'Dancer2::Debugger' ) || print "Bail out!\n";
 }
 
-diag( "Testing Plack::Debugger::Dancer2 $Plack::Debugger::Dancer2::VERSION, Perl $], $^X" );
+diag( "Testing Dancer2::Debugger $Dancer2::Debugger::VERSION, Perl $], $^X" );
