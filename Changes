@@ -1,5 +1,11 @@
 Revision history for Dancer2-Debugger
 
+0.003 Tue 26 Apr 15:27:21 CEST 2016
+
+    * remove dependency on plugin2 to enable use with older Dancer2 versions
+    * remove unused code and reduce dependencies
+    * add meta resources to Makefile.PL
+
 0.002 Tue 26 Apr 14:08:19 CEST 2016
 
     * add TemplateTimer panel
