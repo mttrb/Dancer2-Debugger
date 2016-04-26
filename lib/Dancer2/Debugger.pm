@@ -16,7 +16,6 @@ Dancer2::Debugger - Dancer2 panels for Plack::Debugger
 
 our $VERSION = '0.002';
 
-use Carp;
 use Dancer2::Core::Types;
 use File::Spec;
 use JSON::MaybeXS;
@@ -127,7 +126,7 @@ has data_dir => (
     default => sub {
         my $dir = File::Spec->catfile( File::Spec->tmpdir, 'debugger_panel' );
         return $dir if ( -d $dir || mkdir $dir );
-        croak "Unable to create data_dir $dir: $!";
+        die "Unable to create data_dir $dir: $!";
     },
 );
 
