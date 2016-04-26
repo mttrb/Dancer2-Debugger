@@ -76,6 +76,8 @@ Current panels included with this distribution:
 
 =over
 
+=item L<Plack::Debugger::Panel::Dancer2::Logger>
+
 =item L<Plack::Debugger::Panel::Dancer2::Routes>
 
 =item L<Plack::Debugger::Panel::Dancer2::TemplateVariables>
