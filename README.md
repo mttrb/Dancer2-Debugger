@@ -116,12 +116,6 @@ Convenience method for use in psgi file which runs the following methods:
 ["make\_injector\_middleware" in Plack::App::Debugger](https://metacpan.org/pod/Plack::App::Debugger#make_injector_middleware) and
 ["create\_middleware" in Plack::Debugger](https://metacpan.org/pod/Plack::Debugger#create_middleware).
 
-sub enable {
-    my $self = shift;
-    Plack::Builder::enable $self->app->make\_injector\_middleware;
-    Plack::Builder::enable $self->debugger->make\_collector\_middleware;
-}
-
 ## mount
 
 Convenience method for use in psgi file to mount [Plack::App::Debugger](https://metacpan.org/pod/Plack::App::Debugger).

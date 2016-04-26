@@ -248,6 +248,8 @@ Convenience method for use in psgi file which runs the following methods:
 L<Plack::App::Debugger/make_injector_middleware> and
 L<Plack::Debugger/create_middleware>.
 
+=cut
+
 sub enable {
     my $self = shift;
     Plack::Builder::enable $self->app->make_injector_middleware;

@@ -101,10 +101,6 @@ METHODS
     "make_injector_middleware" in Plack::App::Debugger and
     "create_middleware" in Plack::Debugger.
 
-    sub enable { my $self = shift; Plack::Builder::enable
-    $self->app->make_injector_middleware; Plack::Builder::enable
-    $self->debugger->make_collector_middleware; }
-
   mount
     Convenience method for use in psgi file to mount Plack::App::Debugger.
 
