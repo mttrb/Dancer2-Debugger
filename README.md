@@ -53,6 +53,7 @@ Current panels included with this distribution:
 - [Plack::Debugger::Panel::Dancer2::Logger](https://metacpan.org/pod/Plack::Debugger::Panel::Dancer2::Logger)
 - [Plack::Debugger::Panel::Dancer2::Routes](https://metacpan.org/pod/Plack::Debugger::Panel::Dancer2::Routes)
 - [Plack::Debugger::Panel::Dancer2::Session](https://metacpan.org/pod/Plack::Debugger::Panel::Dancer2::Session)
+- [Plack::Debugger::Panel::Dancer2::Settings](https://metacpan.org/pod/Plack::Debugger::Panel::Dancer2::Settings)
 - [Plack::Debugger::Panel::Dancer2::TemplateVariables](https://metacpan.org/pod/Plack::Debugger::Panel::Dancer2::TemplateVariables)
 
 Some of the debugger panels make use of collectors which are imported into

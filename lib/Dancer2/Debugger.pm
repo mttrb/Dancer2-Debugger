@@ -82,6 +82,8 @@ Current panels included with this distribution:
 
 =item L<Plack::Debugger::Panel::Dancer2::Session>
 
+=item L<Plack::Debugger::Panel::Dancer2::Settings>
+
 =item L<Plack::Debugger::Panel::Dancer2::TemplateVariables>
 
 =back
