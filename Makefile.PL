@@ -17,7 +17,7 @@ WriteMakefile(
     PREREQ_PM => {
         'Cache::FastMmap'        => 0,
         'Carp'                   => 0,
-        'Dancer2'                => 0,
+        'Dancer2'                => '0.166002',
         'Dancer2::Core::Hook'    => 0,
         'Dancer2::Core::Types'   => 0,
         'Dancer2::Plugin'        => 0,
