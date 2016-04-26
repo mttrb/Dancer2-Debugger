@@ -17,10 +17,11 @@ sub BUILD {
 
     $self->plugin->app->add_hook(
         Dancer2::Core::Hook->new(
-            name => 'after_layout_render',
+            name => 'before',
             code => sub {
                 my $settings = $self->plugin->app->config;
-                $self->plugin->app->request->env->{$env_key} = $settings;
+                # make a copy
+                $self->plugin->app->request->env->{$env_key} = { %$settings };
             },
         )
     );
