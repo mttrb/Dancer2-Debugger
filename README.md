@@ -4,7 +4,7 @@ Dancer2::Debugger - Dancer2 panels for Plack::Debugger
 
 # VERSION
 
-0.001
+0.002
 
 # SYNOPSIS
 
@@ -54,6 +54,7 @@ Current panels included with this distribution:
 - [Plack::Debugger::Panel::Dancer2::Routes](https://metacpan.org/pod/Plack::Debugger::Panel::Dancer2::Routes)
 - [Plack::Debugger::Panel::Dancer2::Session](https://metacpan.org/pod/Plack::Debugger::Panel::Dancer2::Session)
 - [Plack::Debugger::Panel::Dancer2::Settings](https://metacpan.org/pod/Plack::Debugger::Panel::Dancer2::Settings)
+- [Plack::Debugger::Panel::Dancer2::TemplateTimer](https://metacpan.org/pod/Plack::Debugger::Panel::Dancer2::TemplateTimer)
 - [Plack::Debugger::Panel::Dancer2::TemplateVariables](https://metacpan.org/pod/Plack::Debugger::Panel::Dancer2::TemplateVariables)
 
 Some of the debugger panels make use of collectors which are imported into
