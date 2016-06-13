@@ -4,7 +4,7 @@ Dancer2::Debugger - Dancer2 panels for Plack::Debugger
 
 # VERSION
 
-0.002
+0.004
 
 # SYNOPSIS
 

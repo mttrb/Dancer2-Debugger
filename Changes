@@ -1,5 +1,12 @@
 Revision history for Dancer2-Debugger
 
+0.004 Mon 13 Jun 12:32:30 CEST 2016
+
+    * switch to findallmod instead of findsubmod in Plugin::Debugger as
+      otherwise some plugins might be missed
+    * add 'allow_blessed' to default JSON serializer so that such things
+      as DBIx::Class objects don't cause the serializer to croak
+
 0.003 Tue 26 Apr 15:27:21 CEST 2016
 
     * remove dependency on plugin2 to enable use with older Dancer2 versions
