@@ -9,7 +9,7 @@ Dancer2::Plugin::Debugger
 use strict;
 use warnings;
 
-use Module::Find qw/findsubmod/;
+use Module::Find qw/findallmod/;
 use Module::Runtime qw/use_module/;
 use Dancer2::Plugin;
 
@@ -36,7 +36,7 @@ on_plugin_import {
 
     return unless $plugin->config->{enabled};
 
-    my @panels = findsubmod Dancer2::Plugin::Debugger::Panel;
+    my @panels = findallmod Dancer2::Plugin::Debugger::Panel;
 
     foreach my $panel (@panels) {
         use_module($panel)->new( plugin => $plugin );
