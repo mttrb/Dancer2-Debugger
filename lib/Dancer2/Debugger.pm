@@ -223,7 +223,13 @@ Defaults to C<< JSON::MaybeXS->new( convert_blessed => 1, utf8 => 1 ) >>
 has serializer => (
     is      => 'ro',
     isa     => Object,
-    default => sub { JSON::MaybeXS->new( convert_blessed => 1, utf8 => 1 ) },
+    default => sub {
+        JSON::MaybeXS->new(
+            convert_blessed => 1,
+            allow_blessed   => 1,
+            utf8            => 1
+        );
+    },
 );
 
 =head2 storage
