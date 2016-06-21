@@ -4,7 +4,13 @@ package Dancer2::Plugin::Debugger::Panel::TemplateTimer;
 
 Dancer2::Plugin::Debugger::Panel::TemplateTimer - add template and layout timing data to debugger panels
 
+=head1 VERSION
+
+0.005
+
 =cut
+
+our $VERSION = '0.005';
 
 use Time::HiRes qw/gettimeofday tv_interval/;
 use Moo;

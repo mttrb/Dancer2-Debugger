@@ -2,9 +2,15 @@ package Dancer2::Plugin::Debugger;
 
 =head1 NAME
 
-Dancer2::Plugin::Debugger
+Dancer2::Plugin::Debugger - main debugger plugin for Dancer2 for Plack::Debugger
+
+=head1 VERSION
+
+0.005
 
 =cut
+
+our $VERSION = '0.005';
 
 use strict;
 use warnings;

@@ -1,5 +1,17 @@
 package Plack::Debugger::Panel::Dancer2::Settings;
 
+=head1 NAME
+
+Plack::Debugger::Panel::Dancer2::Settings - Dancer2 settings panel for Plack::Debugger
+
+=head1 VERSION
+
+0.005
+
+=cut
+
+our $VERSION = '0.005';
+
 use strict;
 use warnings;
 

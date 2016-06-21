@@ -10,11 +10,11 @@ Dancer2::Debugger - Dancer2 panels for Plack::Debugger
 
 =head1 VERSION
 
-0.004
+0.005
 
 =cut
 
-our $VERSION = '0.004';
+our $VERSION = '0.005';
 
 use Dancer2::Core::Types;
 use File::Spec;

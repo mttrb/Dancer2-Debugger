@@ -4,7 +4,13 @@ package Dancer2::Plugin::Debugger::Panel::Logger;
 
 Dancer2::Plugin::Debugger::Panel::Logger - add logs to debugger panels
 
+=head1 VERSION
+
+0.005
+
 =cut
+
+our $VERSION = '0.005';
 
 use Moo;
 with 'Dancer2::Plugin::Debugger::Role::Panel';

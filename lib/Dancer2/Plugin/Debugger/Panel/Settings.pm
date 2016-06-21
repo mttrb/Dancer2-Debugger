@@ -4,7 +4,13 @@ package Dancer2::Plugin::Debugger::Panel::Settings;
 
 Dancer2::Plugin::Debugger::Panel::Settings - add settings data to debugger panels
 
+=head1 VERSION
+
+0.005
+
 =cut
+
+our $VERSION = '0.005';
 
 use Moo;
 with 'Dancer2::Plugin::Debugger::Role::Panel';

@@ -1,5 +1,17 @@
 package Plack::Debugger::Panel::Dancer2::TemplateTimer;
 
+=head1 NAME
+
+Plack::Debugger::Panel::Dancer2::TemplateTimer - Dancer2 template timer panel for Plack::Debugger
+
+=head1 VERSION
+
+0.005
+
+=cut
+
+our $VERSION = '0.005';
+
 use strict;
 use warnings;
 
