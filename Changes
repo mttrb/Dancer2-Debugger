@@ -1,5 +1,9 @@
 Revision history for Dancer2-Debugger
 
+0.005 Tue 21 Jun 15:01:25 CEST 2016
+
+    * Don't try to stash data in var if there is no request.
+
 0.004 Mon 13 Jun 12:32:30 CEST 2016
 
     * switch to findallmod instead of findsubmod in Plugin::Debugger as
