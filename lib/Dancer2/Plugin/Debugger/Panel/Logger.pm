@@ -19,8 +19,11 @@ sub BUILD {
         Dancer2::Core::Hook->new(
             name => 'engine.logger.after',
             code => sub {
-                my ( $logger, @args ) = @_;
-                push @{ $self->plugin->app->request->env->{$env_key} }, \@args;
+                if ( $self->plugin->app->request ) {
+                    my ( $logger, @args ) = @_;
+                    push @{ $self->plugin->app->request->env->{$env_key} },
+                      \@args;
+                }
             },
         )
     );

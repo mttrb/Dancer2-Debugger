@@ -19,8 +19,12 @@ sub BUILD {
         Dancer2::Core::Hook->new(
             name => 'after_layout_render',
             code => sub {
-                my $session = $self->plugin->app->session->data;
-                $self->plugin->app->request->env->{$env_key} = $session;
+                if (   $self->plugin->app->request
+                    && $self->plugin->app->session )
+                {
+                    my $session = $self->plugin->app->session->data;
+                    $self->plugin->app->request->env->{$env_key} = $session;
+                }
             },
         )
     );

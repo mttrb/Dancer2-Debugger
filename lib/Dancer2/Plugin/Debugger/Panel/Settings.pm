@@ -19,9 +19,12 @@ sub BUILD {
         Dancer2::Core::Hook->new(
             name => 'before',
             code => sub {
-                my $settings = $self->plugin->app->config;
-                # make a copy
-                $self->plugin->app->request->env->{$env_key} = { %$settings };
+                if ( $self->plugin->app->request ) {
+                    my $settings = $self->plugin->app->config;
+
+                    # make a copy
+                    $self->plugin->app->request->env->{$env_key} = {%$settings};
+                }
             },
         )
     );

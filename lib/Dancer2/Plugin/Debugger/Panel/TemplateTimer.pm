@@ -23,8 +23,10 @@ sub BUILD {
         Dancer2::Core::Hook->new(
             name => 'before_template_render',
             code => sub {
-                $self->plugin->app->request->var(
-                    'debugger.timer.template' => [gettimeofday] );
+                if ( $self->plugin->app->request ) {
+                    $self->plugin->app->request->var(
+                        'debugger.timer.template' => [gettimeofday] );
+                }
             },
         )
     );
@@ -33,8 +35,10 @@ sub BUILD {
         Dancer2::Core::Hook->new(
             name => 'before_layout_render',
             code => sub {
-                $self->plugin->app->request->var(
-                    'debugger.timer.layout' => [gettimeofday] );
+                if ( $self->plugin->app->request ) {
+                    $self->plugin->app->request->var(
+                        'debugger.timer.layout' => [gettimeofday] );
+                }
             },
         )
     );
@@ -43,12 +47,16 @@ sub BUILD {
         Dancer2::Core::Hook->new(
             name => 'after_template_render',
             code => sub {
-                my $start =
-                  $self->plugin->app->request->var('debugger.timer.template');
-                my $end = [gettimeofday];
+                if ( $self->plugin->app->request ) {
 
-                $self->plugin->app->request->env->{$env_key}->{template} =
-                  tv_interval( $start, $end );
+                    my $start = $self->plugin->app->request->var(
+                        'debugger.timer.template');
+
+                    my $end = [gettimeofday];
+
+                    $self->plugin->app->request->env->{$env_key}->{template} =
+                      tv_interval( $start, $end );
+                }
             },
         )
     );
@@ -57,12 +65,16 @@ sub BUILD {
         Dancer2::Core::Hook->new(
             name => 'after_layout_render',
             code => sub {
-                my $start =
-                  $self->plugin->app->request->var('debugger.timer.layout');
-                my $end = [gettimeofday];
+                if ( $self->plugin->app->request ) {
 
-                $self->plugin->app->request->env->{$env_key}->{layout} =
-                  tv_interval( $start, $end );
+                    my $start =
+                      $self->plugin->app->request->var('debugger.timer.layout');
+
+                    my $end = [gettimeofday];
+
+                    $self->plugin->app->request->env->{$env_key}->{layout} =
+                      tv_interval( $start, $end );
+                }
             },
         )
     );

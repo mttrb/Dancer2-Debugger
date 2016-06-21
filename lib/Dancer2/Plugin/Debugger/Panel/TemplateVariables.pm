@@ -19,8 +19,10 @@ sub BUILD {
         Dancer2::Core::Hook->new(
             name => 'before_layout_render',
             code => sub {
-                my $tokens = shift;
-                $self->plugin->app->request->env->{$env_key} = $tokens;
+                if ( $self->plugin->app->request ) {
+                    my $tokens = shift;
+                    $self->plugin->app->request->env->{$env_key} = $tokens;
+                }
             },
         )
     );
