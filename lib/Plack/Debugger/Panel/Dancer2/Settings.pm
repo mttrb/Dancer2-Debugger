@@ -6,11 +6,11 @@ Plack::Debugger::Panel::Dancer2::Settings - Dancer2 settings panel for Plack::De
 
 =head1 VERSION
 
-0.006
+0.007
 
 =cut
 
-our $VERSION = '0.006';
+our $VERSION = '0.007';
 
 use strict;
 use warnings;

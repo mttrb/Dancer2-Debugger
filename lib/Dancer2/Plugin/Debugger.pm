@@ -6,11 +6,11 @@ Dancer2::Plugin::Debugger - main debugger plugin for Dancer2 for Plack::Debugger
 
 =head1 VERSION
 
-0.006
+0.007
 
 =cut
 
-our $VERSION = '0.006';
+our $VERSION = '0.007';
 
 use strict;
 use warnings;

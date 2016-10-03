@@ -6,11 +6,11 @@ Dancer2::Plugin::Debugger::Role::Panel - base role for Dancer2 panels
 
 =head1 VERSION
 
-0.006
+0.007
 
 =cut
 
-our $VERSION = '0.006';
+our $VERSION = '0.007';
 
 use Dancer2::Core::Types;
 use Moo::Role;

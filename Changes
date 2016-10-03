@@ -1,5 +1,9 @@
 Revision history for Dancer2-Debugger
 
+0.007 Mon  3 Oct 12:53:59 CEST 2016
+
+    * Fix broken version number in one file. No other changes.
+
 0.006 Mon  3 Oct 12:38:25 CEST 2016
 
     * Add 'allow_unknown' to JSON serializer constructor so that coderefs
