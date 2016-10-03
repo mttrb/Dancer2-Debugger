@@ -227,7 +227,8 @@ has serializer => (
         JSON::MaybeXS->new(
             convert_blessed => 1,
             allow_blessed   => 1,
-            utf8            => 1
+            allow_unknown   => 1,
+            utf8            => 1,
         );
     },
 );
