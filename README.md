@@ -4,7 +4,7 @@ Dancer2::Debugger - Dancer2 panels for Plack::Debugger
 
 # VERSION
 
-0.005
+0.006
 
 # SYNOPSIS
 
@@ -131,6 +131,10 @@ Convenience method for use in psgi file to mount [Plack::App::Debugger](https://
 # AUTHORS
 
 Peter Mottram (SysPete), `peter@sysnix.com`
+
+# CONTRIBUTORS
+
+    James Morrison - GH #2
 
 # LICENSE AND COPYRIGHT
 

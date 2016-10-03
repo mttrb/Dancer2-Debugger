@@ -10,11 +10,11 @@ Dancer2::Debugger - Dancer2 panels for Plack::Debugger
 
 =head1 VERSION
 
-0.005
+0.006
 
 =cut
 
-our $VERSION = '0.005';
+our $VERSION = '0.006';
 
 use Dancer2::Core::Types;
 use File::Spec;
@@ -291,6 +291,10 @@ L<Plack::Debugger>, L<Plack::Debugger::Panel::Dancer2::Version>
 =head1 AUTHORS
 
 Peter Mottram (SysPete), C<peter@sysnix.com>
+
+=head1 CONTRIBUTORS
+
+ James Morrison - GH #2
 
 =head1 LICENSE AND COPYRIGHT
 

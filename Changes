@@ -1,5 +1,10 @@
 Revision history for Dancer2-Debugger
 
+0.006 Mon  3 Oct 12:38:25 CEST 2016
+
+    * Add 'allow_unknown' to JSON serializer constructor so that coderefs
+      don't cause an exception. GH#2 (James Morrison)
+
 0.005 Tue 21 Jun 15:01:25 CEST 2016
 
     * Don't try to stash data in var if there is no request.

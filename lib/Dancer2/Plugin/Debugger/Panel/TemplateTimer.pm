@@ -6,11 +6,11 @@ Dancer2::Plugin::Debugger::Panel::TemplateTimer - add template and layout timing
 
 =head1 VERSION
 
-0.005
+0.006
 
 =cut
 
-our $VERSION = '0.005';
+our $VERSION = '0.006';
 
 use Time::HiRes qw/gettimeofday tv_interval/;
 use Moo;
