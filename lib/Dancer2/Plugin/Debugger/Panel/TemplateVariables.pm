@@ -6,11 +6,11 @@ Dancer2::Plugin::Debugger::Panel::TemplateVariables - add template tokens to deb
 
 =head1 VERSION
 
-0.007
+0.008
 
 =cut
 
-our $VERSION = '0.007';
+our $VERSION = '0.008';
 
 use Moo;
 with 'Dancer2::Plugin::Debugger::Role::Panel';

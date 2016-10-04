@@ -6,11 +6,11 @@ Plack::Debugger::Panel::Dancer2::TemplateVariables - Dancer2 template variables 
 
 =head1 VERSION
 
-0.007
+0.008
 
 =cut
 
-our $VERSION = '0.007';
+our $VERSION = '0.008';
 
 use strict;
 use warnings;

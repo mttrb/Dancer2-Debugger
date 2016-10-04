@@ -2,7 +2,7 @@ NAME
     Dancer2::Debugger - Dancer2 panels for Plack::Debugger
 
 VERSION
-    0.007
+    0.008
 
 SYNOPSIS
     In your .psgi file:
@@ -82,6 +82,14 @@ ATTRIBUTES
 
     Defaults to "%s.json".
 
+  injector_ignore_status
+    If set to a true value then we override "should_ignore_status" in
+    Plack::Middleware::Debugger::Injector to always return false so that the
+    injector tries to add the javascript snippet to the page irrespective of
+    the http status code.
+
+    Defaults to false.
+
   panels
     Array reference of panel class names to load. Defaults to all classes
     found in @INC under Plack::Debugger::Panel.
@@ -98,6 +106,9 @@ ATTRIBUTES
     Instantiated Plack::Debugger::Storage object.
 
 METHODS
+  BUILD
+    Handle "injector_ignore_status" if it is true.
+
   enable
     Convenience method for use in psgi file which runs the following
     methods:

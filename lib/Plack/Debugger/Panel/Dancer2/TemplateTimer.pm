@@ -6,11 +6,11 @@ Plack::Debugger::Panel::Dancer2::TemplateTimer - Dancer2 template timer panel fo
 
 =head1 VERSION
 
-0.007
+0.008
 
 =cut
 
-our $VERSION = '0.007';
+our $VERSION = '0.008';
 
 use strict;
 use warnings;

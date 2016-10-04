@@ -1,5 +1,10 @@
 Revision history for Dancer2-Debugger
 
+0.008 Tue  4 Oct 17:48:16 CEST 2016
+
+    * Add injector_ignore_status attribute so that panel can be accessed
+      even if http code is 500. GH#1 (Stefan Hornburg)
+
 0.007 Mon  3 Oct 12:53:59 CEST 2016
 
     * Fix broken version number in one file. No other changes.

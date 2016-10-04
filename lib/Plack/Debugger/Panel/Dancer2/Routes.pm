@@ -6,11 +6,11 @@ Plack::Debugger::Panel::Dancer2::Routes - Dancer2 routes panel for Plack::Debugg
 
 =head1 VERSION
 
-0.007
+0.008
 
 =cut
 
-our $VERSION = '0.007';
+our $VERSION = '0.008';
 
 use strict;
 use warnings;

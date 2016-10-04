@@ -4,7 +4,7 @@ Dancer2::Debugger - Dancer2 panels for Plack::Debugger
 
 # VERSION
 
-0.007
+0.008
 
 # SYNOPSIS
 
@@ -92,6 +92,15 @@ See ["filename\_fmt" in Plack::Debugger::Storage](https://metacpan.org/pod/Plack
 
 Defaults to `%s.json`.
 
+## injector\_ignore\_status
+
+If set to a true value then we override
+["should\_ignore\_status" in Plack::Middleware::Debugger::Injector](https://metacpan.org/pod/Plack::Middleware::Debugger::Injector#should_ignore_status) to always
+return false so that the injector tries to add the javascript snippet to the
+page irrespective of the http status code.
+
+Defaults to false.
+
 ## panels
 
 Array reference of panel class names to load. Defaults to all classes
@@ -112,6 +121,10 @@ Defaults to `JSON::MaybeXS->new( convert_blessed => 1, utf8 => 1 )`
 Instantiated [Plack::Debugger::Storage](https://metacpan.org/pod/Plack::Debugger::Storage) object.
 
 # METHODS
+
+## BUILD
+
+Handle ["injector\_ignore\_status"](#injector_ignore_status) if it is true.
 
 ## enable
 
