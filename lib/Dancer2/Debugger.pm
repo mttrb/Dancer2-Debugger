@@ -25,6 +25,7 @@ use Plack::App::Debugger;
 use Plack::Builder ();
 use Plack::Debugger;
 use Plack::Debugger::Storage;
+use Plack::Middleware::Debugger::Injector;
 
 use Moo;
 use namespace::clean;
@@ -176,6 +177,23 @@ has filename_fmt => (
     default => '%s.json',
 );
 
+=head2 injector_ignore_status
+
+If set to a true value then we override
+L<Plack::Middleware::Debugger::Injector/should_ignore_status> to always
+return false so that the injector tries to add the javascript snippet to the
+page irrespective of the http status code.
+
+Defaults to false.
+
+=cut
+
+has injector_ignore_status => (
+    is      => 'ro',
+    isa     => Bool,
+    default => 0,
+);
+
 =head2 panels
 
 Array reference of panel class names to load. Defaults to all classes
@@ -254,6 +272,22 @@ has storage => (
 );
 
 =head1 METHODS
+
+=head2 BUILD
+
+Handle L</injector_ignore_status> if it is true.
+
+=cut
+
+sub BUILD {
+    my $self = shift;
+    if ( $self->injector_ignore_status ) {
+        no warnings 'redefine';
+        *Plack::Middleware::Debugger::Injector::should_ignore_status = sub {
+            return 0;
+        };
+    }
+}
 
 =head2 enable
 
