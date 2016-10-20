@@ -55,8 +55,8 @@ sub BUILD {
             code => sub {
                 if ( $self->plugin->app->request ) {
 
-                    my $start = $self->plugin->app->request->var(
-                        'debugger.timer.template');
+                    my $start = delete $self->plugin->app->request->vars->{
+                        'debugger.timer.template'};
 
                     my $end = [gettimeofday];
 
@@ -73,8 +73,8 @@ sub BUILD {
             code => sub {
                 if ( $self->plugin->app->request ) {
 
-                    my $start =
-                      $self->plugin->app->request->var('debugger.timer.layout');
+                    my $start = delete $self->plugin->app->request->vars->{
+                        'debugger.timer.layout'};
 
                     my $end = [gettimeofday];
 
