@@ -23,7 +23,7 @@ sub BUILD {
 
     $self->plugin->app->add_hook(
         Dancer2::Core::Hook->new(
-            name => 'after_layout_render',
+            name => 'after',
             code => sub {
                 if ( $self->plugin->app->request ) {
                     my $routes = $self->plugin->app->routes;

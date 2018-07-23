@@ -23,7 +23,7 @@ sub BUILD {
 
     $self->plugin->app->add_hook(
         Dancer2::Core::Hook->new(
-            name => 'before_layout_render',
+            name => 'after_template_render',
             code => sub {
                 if ( $self->plugin->app->request ) {
                     my $tokens = shift;
